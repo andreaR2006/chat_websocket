@@ -92,3 +92,8 @@ function clearFeedback() {
         element.parentNode.removeChild(element);
     });
 }
+socket.on('chat-history', (messages) => {
+    messages.forEach((message) => {
+        addMessageToUI(false, message);
+    });
+});
